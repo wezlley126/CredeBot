@@ -1,3 +1,4 @@
+<p>Este projeto possui como objetivo a criação de um bot que auxilie nos trabalhos realizados pelo suporte da CREDE 09, tendo como tarefas o envio automático de comunicados em datas marcadas, além de aberturas de chamados.</p>
 Este projeto utiliza nodejs acompanhado das bibliotecas: 
 <h2>Bibliotecas utlizadas</h2>
 <ul>
