@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/02/2024 às 19:06
+-- Tempo de geração: 24/02/2024 às 20:10
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -31,9 +31,9 @@ USE `supbot`;
 
 CREATE TABLE `aniversariantes` (
   `id` int(11) NOT NULL,
-  `nome` varchar(35) DEFAULT NULL,
-  `dia` char(2) DEFAULT NULL,
-  `mes` char(2) DEFAULT NULL,
+  `nome` varchar(35) NOT NULL,
+  `dia` char(2) NOT NULL,
+  `mes` char(2) NOT NULL,
   `filename` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

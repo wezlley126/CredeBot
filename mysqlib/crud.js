@@ -28,20 +28,36 @@ con.connect(function(err) {
   console.log("Connected!");
 });
 
-let data = {
-    id: "default",
-    nome: "weslley pereira borger do nascimento da silva",
-    dia: "20",
-    mes: "05",
-    filename: "weslley pereira borger do nascimento da silva 20-05.png"
-};
-
-let comando = `INSERT INTO aniversariantes VALUES (default, '${data['nome']}', '${data['dia']}', '${data['mes']}', '${data['filename']}')`;
-
-con.query(comando, (err, result) => {
-    if(err){
-        console.log('Erro ao inserir dados:', err);
-    }else{
-        console.log('Dados  innseridos com sucesso: ', result);
+class Aniversariantes{
+    constructor(nomeTabela) {
+        this.tableName = nomeTabela;
+        this.comandoExec = '';
     };
-});
+
+    insertAniversariantes(nome, dia, mes, filename) {
+        let comando = `INSERT INTO aniversariantes VALUES (default, '${nome}', '${dia}', '${mes}', '${filename}')`;
+
+        con.query(comando, (err, result) => {
+            if(err){
+                console.log('Erro ao inserir dados:', err);
+            }else{
+                console.log('Dados  innseridos com sucesso: ', result);
+            };
+        });
+    }
+
+    removeAniversariantes(id) {
+        let comando = `DELETE FROM ${this.tableName} WHERE id = ${id}`;
+
+        con.query(comando, (err, result) => {
+            if(err){
+                console.log('Erro ao remover aniversariantes');
+            }else{
+                console.log('Aniversariante(s) apagados com sucesso');
+            };
+        });
+    };
+
+}
+
+export default Aniversariantes;
