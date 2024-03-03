@@ -8,6 +8,8 @@ Este projeto utiliza nodejs acompanhado das bibliotecas:
   <li>axios(será usado futuramente junto do react-next)</li>
   <li>cors</li>
 </ul>
+Código para instalar as dependências:<br/>
+<b>npm install express mysql cors axion nodemon @wppconnect-team/wppconnect --save</b>
 <h2>Frontend</h2>
 <ul>
   <li>React-next</li>
