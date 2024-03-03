@@ -1,6 +1,10 @@
-import Aniversariantes from "./crud.js";
+import Aniversariantes from './crud.js';
 
-const teste = new Aniversariantes('aniversariantes');
+const test = new Aniversariantes('aniversariantes');
 
-//teste.insertAniversariantes('weslley', '22', '13', 'faz o L garai kkkkk');
-teste.removeAniversariantes(2)
+const data = async () => {
+    const dados = await test.readAniversariantes();
+    console.log(dados);
+}
+
+data()

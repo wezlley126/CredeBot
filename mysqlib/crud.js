@@ -34,8 +34,8 @@ class Aniversariantes{
         this.comandoExec = '';
     };
 
-    insertAniversariantes(nome, dia, mes, filename) {
-        let comando = `INSERT INTO aniversariantes VALUES (default, '${nome}', '${dia}', '${mes}', '${filename}')`;
+    createAniversariantes(nome, dia, mes, filename) {
+        let comando = `INSERT INTO ${this.tableName} VALUES (default, '${nome}', '${dia}', '${mes}', '${filename}')`;
 
         con.query(comando, (err, result) => {
             if(err){
@@ -46,7 +46,36 @@ class Aniversariantes{
         });
     }
 
-    removeAniversariantes(id) {
+    readAniversariantes() {
+        const comando = `SELECT * FROM ${this.tableName}`;
+
+        con.query(comando, (err, result) => {
+            if(err){
+                console.log('Erro ao requisitar os dados da tabela: ', err);
+            }else{
+                //console.log('Dados recebidos com sucesso: ', result);
+                return result;
+            };
+        });
+    };
+
+    updateAniversariantes(column, newData, id) {
+        if(column === 'id'){
+            console.log('O campo id não pode ser alterado, por favor entre em contato com o administrador do banco de dados ;)');
+        }else{
+            let comando = `UPDATE ${this.tableName} SET ${column} = '${newData}' WHERE id = '${id}'`;
+
+            con.query(comando, (err, result) => {
+                if(err){
+                    console.log(`Erro ao alterar a coluna ${column} da tabela ${this.tableName}: `, err);
+                }else{
+                    console.log(`Coluna ${column} da tabela ${this.tableName} alterada com sucesso: `, result);
+                };
+            });
+        }
+    };
+
+    deleteAniversariantes(id) {
         let comando = `DELETE FROM ${this.tableName} WHERE id = ${id}`;
 
         con.query(comando, (err, result) => {
@@ -57,6 +86,8 @@ class Aniversariantes{
             };
         });
     };
+
+
 
 }
 
