@@ -49,15 +49,17 @@ class Aniversariantes{
     readAniversariantes() {
         const comando = `SELECT * FROM ${this.tableName}`;
 
-        con.query(comando, (err, result) => {
-            if(err){
-                console.log('Erro ao requisitar os dados da tabela: ', err);
-            }else{
-                //console.log('Dados recebidos com sucesso: ', result);
-                return result;
-            };
-        });
-    };
+        return new Promise((resolve, reject) => {
+            con.query(comando, (err, result) => {
+                if(err) {
+                    console.log('Erro ao solicitar os dados da tabela: ', err);
+                }else{
+                    console.log('Dados recebido com sucesso :D');
+                    return resolve(result);
+                }
+            })
+        })
+    }
 
     updateAniversariantes(column, newData, id) {
         if(column === 'id'){
