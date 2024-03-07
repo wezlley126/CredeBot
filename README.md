@@ -8,8 +8,8 @@ Este projeto utiliza nodejs acompanhado das bibliotecas:
   <li>axios(será usado futuramente junto do react-next)</li>
   <li>cors</li>
 </ul>
-<b>Para o código funcionar é preciso iniciar o comando npm init -y e adicionar a linha <i>"type": "module",</i> depois da linha <i>"main": "index.js",</i> e antes de scripts, após isso criar uma pasta <i>src</i> dentro do diretório e importar o arquivo <i>.sql</i> localizado dentro da pasta mysqlib</b><br/>
-Código para instalar as dependências:<br/><br/>
+<b>Para o código funcionar é preciso iniciar o comando npm init -y e adicionar a linha <i>"type": "module",</i> depois da linha <i>"main": "index.js",</i> e antes de scripts, após isso criar uma pasta <i>src</i> dentro do diretório e importar o arquivo <i>.sql</i> localizado dentro da pasta mysqlib</b><br/><br/>
+Código para instalar as dependências:<br/>
 <b>npm install express mysql cors axion nodemon @wppconnect-team/wppconnect --save</b>
 <h2>Frontend</h2>
 <ul>
