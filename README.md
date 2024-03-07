@@ -8,7 +8,7 @@ Este projeto utiliza nodejs acompanhado das bibliotecas:
   <li>axios(será usado futuramente junto do react-next)</li>
   <li>cors</li>
 </ul>
-<b>Para o código funcionar é preciso iniciar o comando npm init -y e adicionar a linha <i>"type": "module",</i> depois da linha <i>"main": "index.js",</i> e antes de scripts, após isso criar uma pasta <i>src</i> dentro do diretório e importar o arquivo <i>.sql</i> localizado dentro da pasta mysqlib</b><br/><br/>
+<b>Para instalar as dependências é preciso executar o comando <i>npm run install</i> e importar o banco de dados do arquivo .sql da pasta mysqlib, ao instalar as dependências e importar o banco de dados, será nescessário executar os comando "npm run dev" dentro do repositório raiz(/) e da pasta frontend(/frontend), assim o servidor frontend reactNext irá rodar na porta 3000, enquanto o backend com nodejs irá ser executado na porta 3001</b>
 Código para instalar as dependências:<br/>
 <b>npm install express mysql cors axion nodemon @wppconnect-team/wppconnect --save</b>
 <h2>Frontend</h2>
