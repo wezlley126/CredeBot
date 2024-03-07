@@ -46,8 +46,13 @@ class Aniversariantes{
         });
     }
 
-    readAniversariantes() {
-        const comando = `SELECT * FROM ${this.tableName}`;
+    readAniversariantes(idSearch) {
+        let comando = '';
+        if(idSearch){
+            comando = `SELECT * FROM ${this.tableName} WHERE id = ${idSearch}`;
+        }else{
+            comando = `SELECT * FROM ${this.tableName}`;
+        }
 
         return new Promise((resolve, reject) => {
             con.query(comando, (err, result) => {
@@ -56,6 +61,7 @@ class Aniversariantes{
                 }else{
                     console.log('Dados recebido com sucesso :D');
                     return resolve(result);
+                    
                 }
             })
         })
